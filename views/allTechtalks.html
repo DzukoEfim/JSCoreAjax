@@ -1,0 +1,25 @@
+	<div class="container" ng-controller="allTechtolkCtrl">
+		<table class="table table-bordered table-hover table-responce">
+			<tr>
+				<th>Title</th>
+				<th>Date</th>
+				<th>Description</th>
+				<th>Level</th>
+				<th>Lector Info</th>
+			</tr>
+			<tr ng-repeat="item in resultTechTolk" ng-if="lectorDAta[item.lector]">
+				<td>{{item.title}}</td>
+				<td>{{item.date}}</td>
+				<td>{{item.description}}</td>
+				<td>{{item.level}}</td>
+				<td>
+					<table class="table">
+						<tr>
+							<td>{{lectorDAta[item.lector].full_name}}</td>
+							<td><p ng-repeat="lit in lectorDAta[item.lector].email">{{lit}}<p></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
